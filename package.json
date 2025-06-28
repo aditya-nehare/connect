@@ -1,0 +1,17 @@
+{
+  "name": "fullstack-project",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "aditya nehare",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "mongoose": "^8.16.1"
+  }
+}
