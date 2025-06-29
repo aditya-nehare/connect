@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
 const methodOverride = require("method-override");
+const ejsMate = require("ejs-mate");
 
 const Listing = require("./models/listing");
 
@@ -29,6 +30,9 @@ app.set("views", path.join(__dirname, "views"));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
+app.use(express.static(path.join(__dirname, "/public"))); //for satic file
+
+app.engine("ejs", ejsMate);
 
 // Root route
 app.get("/", (req, res) => {
