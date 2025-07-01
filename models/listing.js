@@ -9,11 +9,14 @@ const listingSchema = Schema({
   description: String,
   image: {
     type: String,
-    default: "default image",
-    set: (v) => (v === " " ? "default image" : v),
+    default:
+      "https://imgs.search.brave.com/YxU5__ZmYIWW9ftE4peSNm3CsMhQsUx2-MNJUBtcCMU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvaGQvd2lu/ZG93cy1kZWZhdWx0/LWJhY2tncm91bmQt/aWh1ZWNqazJtaGFs/dzNucS5qcGc",
+    set: (v) =>
+      v === " "
+        ? "https://imgs.search.brave.com/YxU5__ZmYIWW9ftE4peSNm3CsMhQsUx2-MNJUBtcCMU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvaGQvd2lu/ZG93cy1kZWZhdWx0/LWJhY2tncm91bmQt/aWh1ZWNqazJtaGFs/dzNucS5qcGc"
+        : v,
   },
   price: Number,
-  location: String,
 });
 
 const listing = mongoose.model("Listing", listingSchema);

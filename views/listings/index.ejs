@@ -10,20 +10,18 @@
             src="<%= listing.image %>"
             class="card-img-top"
             alt="Listing image"
-            style="height: 280px; object-fit: cover; border-radius: 10px;"
+            style="object-fit: cover; border-radius: 15px;"
           />
           <div class="card-body d-flex flex-column px-0 pt-2 pb-1">
             <h5 class="fw-semibold text-dark mb-2" style="font-size: 1.1rem">
               <%= listing.title %>
             </h5>
             <p class="text-muted fw-semibold mb-1" style="font-size: 1rem">
-              ₹ <%= listing.price.toLocaleString("en-IN") %>
-            </p>
-            <p class="text-secondary mb-0" style="font-size: 0.95rem">
-              <%= listing.location %>
+              ₹<%= listing.price != null ? listing.price.toLocaleString("en-IN")
+              : 'N/A' %>
             </p>
           </div>
-          <a href="/listing/<%= listing._id %>" class="stretched-link"></a>
+          <a href="/listings/<%= listing._id %>" class="stretched-link"></a>
         </div>
       </div>
       <% } %>

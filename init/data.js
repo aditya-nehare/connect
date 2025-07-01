@@ -1,91 +1,51 @@
 const sampleListings = [
   {
-    title: "Cozy Beachfront Cottage",
-    description: "Escape to this charming beachfront cottage for a relaxing getaway. Enjoy stunning ocean views and easy access to the beach.",
-    image: "https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-    price: 1500,
-    location: "Malibu",
-    country: "United States",
+    title: "Men's White & Black Naruto Low-Top Sneakers",
+    description:
+      "Stylish low-top sneakers inspired by Naruto, featuring a white and black color block design. Perfect for casual wear with an anime flair.",
+    image:
+      "https://images.bewakoof.com/t640/men-s-white-black-naruto-color-block-low-top-sneakers-640588-1728553976-1.jpg",
+    price: 2299,
   },
   {
-    title: "Modern Loft in Downtown",
-    description: "Stay in the heart of the city in this stylish loft apartment. Perfect for urban explorers!",
-    image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-    price: 1200,
-    location: "New York City",
-    country: "United States",
+    title: "Men's Black & Red Akatsuki High-Top Sneakers",
+    description:
+      "Bold high-top sneakers with Akatsuki-themed red and black color blocking. A must-have for any Naruto fan looking to stand out.",
+    image:
+      "https://images.bewakoof.com/t640/men-s-black-red-akatsuki-color-block-high-top-sneakers-630683-1720528499-1.jpg",
+    price: 2499,
   },
   {
-    title: "Mountain Retreat",
-    description: "Unplug and unwind in this peaceful mountain cabin. Surrounded by nature, it's a perfect place to recharge.",
-    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-    price: 1000,
-    location: "Aspen",
-    country: "United States",
+    title: "Men's Red & Black Color Block High-Top Sneakers",
+    description:
+      "Dynamic red and black high-top sneakers with a modern color-block style. Adds edge to any streetwear outfit.",
+    image:
+      "https://images.bewakoof.com/t640/men-s-red-black-color-block-high-top-sneakers-630682-1721643544-1.jpg",
+    price: 2399,
   },
   {
-    title: "Historic Villa in Tuscany",
-    description: "Experience the charm of Tuscany in this beautifully restored villa. Explore the rolling hills and vineyards.",
-    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-    price: 2500,
-    location: "Florence",
-    country: "Italy",
+    title: "Men's Green & Black Kakashi High-Top Sneakers",
+    description:
+      "High-top sneakers with a green and black color block pattern inspired by Kakashi. Ideal for fans of the Hidden Leaf's copy ninja.",
+    image:
+      "https://images.bewakoof.com/t640/men-s-green-black-kakashi-color-block-high-top-sneakers-630679-1718781621-1.jpg",
+    price: 2499,
   },
   {
-    title: "Secluded Treehouse Getaway",
-    description: "Live among the treetops in this unique treehouse retreat. A true nature lover's paradise.",
-    image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-    price: 800,
-    location: "Portland",
-    country: "United States",
+    title: "Men's Black & Brown Color Block Sneakers",
+    description:
+      "Sleek and versatile sneakers featuring a black and brown color block design. Great for everyday urban wear.",
+    image:
+      "https://images.bewakoof.com/t640/men-s-black-brown-color-block-sneakers-642150-1717595306-1.jpg",
+    price: 2199,
   },
   {
-    title: "Beachfront Paradise",
-    description: "Step out of your door onto the sandy beach. This beachfront condo offers the ultimate relaxation.",
-    image: "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-    price: 2000,
-    location: "Cancun",
-    country: "Mexico",
-  },
-  {
-    title: "Rustic Cabin by the Lake",
-    description: "Spend your days fishing and kayaking on the serene lake. This cozy cabin is perfect for outdoor enthusiasts.",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-    price: 900,
-    location: "Lake Tahoe",
-    country: "United States",
-  },
-  {
-    title: "Luxury Penthouse with City Views",
-    description: "Indulge in luxury living with panoramic city views from this stunning penthouse apartment.",
-    image: "https://images.unsplash.com/photo-1622396481328-9b1b78cdd9fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-    price: 3500,
-    location: "Los Angeles",
-    country: "United States",
-  },
-  {
-    title: "Ski-In/Ski-Out Chalet",
-    description: "Hit the slopes right from your doorstep in this ski-in/ski-out chalet in the Swiss Alps.",
-    image: "https://images.unsplash.com/photo-1502784444187-359ac186c5bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-    price: 3000,
-    location: "Verbier",
-    country: "Switzerland",
-  },
-  {
-    title: "Safari Lodge in the Serengeti",
-    description: "Experience the thrill of the wild in a comfortable safari lodge. Witness the Great Migration up close.",
-    image: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-    price: 4000,
-    location: "Serengeti National Park",
-    country: "Tanzania",
-  },
-  {
-    title: "Secluded Beach House in Costa Rica",
-    description: "Escape to a secluded beach house on the Pacific coast of Costa Rica. Surf, relax, and unwind.",
-    image: "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
-    price: 1800,
-    location: "Costa Rica",
-    country: "Costa Rica",
+    title: "Men's Black & Grey Dark Knight Reflective High-Top Sneakers",
+    description:
+      "High-top sneakers in black and grey with reflective details, themed after the Dark Knight. A bold choice for night and day style.",
+    image:
+      "https://images.bewakoof.com/t640/men-s-black-grey-dark-knight-reflective-color-block-high-top-sneakers-640590-1727266931-1.jpg",
+    price: 2599,
   },
 ];
 
