@@ -4,6 +4,8 @@ const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const cookieParser = require("cookie-parser");
+const session = require("express-session");
+const flash = require("connect-flash");
 
 const expressError = require("./utils/expresserror");
 
@@ -36,10 +38,31 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "/public"))); // For static files
 
+const sessionConfig = {
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    httpOnly: true,
+    // secure: true, // Uncomment if using HTTPS in production
+    expires: Date.now() + 1000 * 60 * 60 * 24 * 7, // 1 week
+    maxAge: 1000 * 60 * 60 * 24 * 7,
+  },
+};
+
 // Routes
 app.get("/", (req, res) => {
   res.cookie("visited", true, { maxAge: 1000 * 60 * 60, httpOnly: true }); // expires in 1 hour
   res.send("Welcome to the root API.");
+});
+
+app.use(session(sessionConfig));
+app.use(flash());
+
+app.use((req, res, next) => {
+  res.locals.success = req.flash("success");
+  res.locals.failure = req.flash("failure");
+  next();
 });
 
 app.get("/check", (req, res) => {

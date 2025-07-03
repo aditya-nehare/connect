@@ -1,0 +1,36 @@
+<% if (success && success.length > 0) { %>
+<div
+  id="flash-message"
+  class="alert alert-success alert-dismissible fade show"
+  role="alert"
+>
+  <%= success %>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<% } %> <% if (failure && failure.length > 0) { %>
+<div
+  id="flash-message"
+  class="alert alert-danger alert-dismissible fade show"
+  role="alert"
+>
+  <%= failure %>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<% } %>
+
+<script>
+  setTimeout(() => {
+    const alert = document.getElementById("flash-message");
+    if (alert) {
+      alert.classList.remove("show");
+      alert.classList.add("fade");
+
+      // Optionally remove the element from DOM after fade out
+      setTimeout(() => alert.remove(), 500);
+    }
+  }, 3000); // 3000ms = 3 seconds
+</script>

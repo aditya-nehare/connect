@@ -1,11 +1,11 @@
 const express = require("express");
-const router = express.Router({mergeParams: true});
+const mongoose = require("mongoose");
+const router = express.Router({ mergeParams: true });
 
 const wrapasync = require("../utils/wrapasync");
 const expressError = require("../utils/expresserror");
 
 const Listing = require("../models/listing");
-
 const { listingSchema } = require("../schema.js");
 
 const validatelisting = (req, res, next) => {
@@ -29,7 +29,7 @@ router.get(
 );
 
 // Add-New Listing Form Route
-router.get("//addNew", (req, res) => {
+router.get("/addNew", (req, res) => {
   res.render("listings/addNew.ejs");
 });
 
@@ -38,7 +38,18 @@ router.get(
   "/:id",
   wrapasync(async (req, res) => {
     const { id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      req.flash("failure", "Invalid listing ID");
+      return res.redirect("/listings");
+    }
+
     const listing = await Listing.findById(id).populate("review");
+    if (!listing) {
+      req.flash("failure", "Listing not found");
+      return res.redirect("/listings");
+    }
+
     res.render("listings/show.ejs", { listing });
   })
 );
@@ -48,9 +59,15 @@ router.post(
   "/",
   validatelisting,
   wrapasync(async (req, res, next) => {
-    const newListing = new Listing(req.body.listing);
-    await newListing.save();
-    res.redirect("/listings");
+    try {
+      const newListing = new Listing(req.body.listing);
+      await newListing.save();
+      req.flash("success", "Listing created");
+      res.redirect("/listings");
+    } catch (e) {
+      req.flash("failure", "Failed to create listing");
+      res.redirect("/listings/addNew");
+    }
   })
 );
 
@@ -70,8 +87,14 @@ router.put(
   validatelisting,
   wrapasync(async (req, res) => {
     const { id } = req.params;
-    await Listing.findByIdAndUpdate(id, { ...req.body.listing });
-    res.redirect(`/listings/${id}`);
+    try {
+      await Listing.findByIdAndUpdate(id, { ...req.body.listing });
+      req.flash("success", "Listing updated");
+      res.redirect(`/listings/${id}`);
+    } catch (e) {
+      req.flash("failure", "Failed to update listing");
+      res.redirect(`/listings/${id}/edit`);
+    }
   })
 );
 
@@ -80,7 +103,12 @@ router.delete(
   "/:id",
   wrapasync(async (req, res) => {
     const { id } = req.params;
-    await Listing.findByIdAndDelete(id);
+    try {
+      await Listing.findByIdAndDelete(id);
+      req.flash("success", "Listing deleted");
+    } catch (e) {
+      req.flash("failure", "Failed to delete listing");
+    }
     res.redirect("/listings");
   })
 );
