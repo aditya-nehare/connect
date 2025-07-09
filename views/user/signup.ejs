@@ -1,0 +1,81 @@
+<% layout('layouts/boilerplate') -%>
+
+<body>
+  <div class="container form-container mt-5">
+    <h2 class="mb-4 text-center">Sign Up</h2>
+
+    <% if (failure && failure.length > 0) { %>
+      <div class="alert alert-danger"><%= error %></div>
+    <% } %>
+
+    <% if (success && success.length > 0) { %>
+      <div class="alert alert-success"><%= success %></div>
+    <% } %>
+
+    <form class="needs-validation" novalidate action="/signup" method="POST">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          name="username"
+          required
+        />
+        <div class="invalid-feedback">Username is required.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          required
+        />
+        <div class="invalid-feedback">Please enter a valid email.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label"
+          >Password (min 6 characters)</label
+        >
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          required
+          minlength="6"
+        />
+        <div class="invalid-feedback">
+          Password must be at least 6 characters long.
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+    </form>
+  </div>
+
+  <!-- Bootstrap validation script -->
+  <script>
+    (() => {
+      "use strict";
+      const forms = document.querySelectorAll(".needs-validation");
+      Array.from(forms).forEach((form) => {
+        form.addEventListener(
+          "submit",
+          (event) => {
+            if (!form.checkValidity()) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add("was-validated");
+          },
+          false
+        );
+      });
+    })();
+  </script>
+</body>
