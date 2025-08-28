@@ -4,6 +4,10 @@ const usermodel = require("../models/user");
 const wrapasync = require("../utils/wrapasync");
 const passport = require("passport");
 
+router.get("/getCrop", (req, res) => {
+  res.render("user/chat/getCrop");
+});
+
 router.get("/signup", (req, res) => {
   res.render("user/signup");
 });
@@ -49,6 +53,5 @@ router.post(
     res.redirect("/listings");
   }
 );
-
 
 module.exports = router;

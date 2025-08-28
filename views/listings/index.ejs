@@ -1,29 +1,112 @@
 <% layout('layouts/boilerplate') -%>
 
-<body class="bg-transparent">
+<body style="background: linear-gradient(135deg, #1a1a1a, #000000)">
+  <!-- Slogan Banner -->
+  <div class=" py-5 bg-transparent">
+    <div class="text-center py-5 bg-transparent">
+      <h2 class="fw-bold text-white">
+        Empowering Farmers with Smarter Crop Choices 🌱
+      </h2>
+      <p class="text-light mb-0 fs-3">
+        Right crop, right time — for every farmer
+      </p>
+      <p class="text-light mb-0 fs-5">
+        In India, crops are grown mainly in three seasons – Kharif, Rabi, and Zaid. The choice of crop depends on factors like soil type, rainfall, temperature, and water availability. CropWise AI helps farmers by analyzing these conditions and recommending the most suitable crops, making farming smarter and more sustainable."
+      </p>
+    </div>
+  </div>
+
   <%- include("../includes/carousel") %>
-  <div class="container py-4">
+
+  <div class="container py-5">
+    <!-- Listings Grid -->
     <div class="row g-4">
       <% for (let listing of allListings) { %>
       <div class="col-sm-12 col-md-6 col-lg-4">
-        <div class="card h-100 border-0 overflow-hidden">
-          <img
-            src="<%= listing.image %>"
-            alt="Listing image"
-            class="img-fluid rounded fixed-image"
-            style="width: 100%; height: 400px; object-fit: cover"
-          />
+        <div
+          class="listing-card h-100 position-relative rounded-4 overflow-hidden"
+        >
+          <!-- Image -->
+          <div class="listing-img-wrapper">
+            <img
+              src="<%= listing.image %>"
+              alt="Listing image"
+              class="listing-img"
+            />
+          </div>
+
+          <!-- Overlay -->
           <div
-            class="card-body d-flex flex-column px-1 overflow-hidden pt-3 pb-5"
+            class="listing-overlay d-flex flex-column justify-content-end p-3"
           >
-            <h5 class="fw-semibold text-dark mb-2" style="font-size: 1.1rem">
+            <h5 class="fw-bold text-white mb-2 text-truncate">
               <%= listing.title %>
             </h5>
+            <p
+              class="text-light small mb-3"
+              style="max-height: 40px; overflow: hidden"
+            >
+              <%= listing.description ? listing.description : "No description available." %>
+            </p>
+            <a
+              href="/listings/<%= listing._id %>"
+              class="btn btn-light btn-sm fw-semibold shadow-sm rounded-pill px-3"
+            >
+              View Details
+            </a>
           </div>
-          <a href="/listings/<%= listing._id %>" class="stretched-link"></a>
         </div>
       </div>
       <% } %>
     </div>
   </div>
+
+  <!-- Aesthetic Styling -->
+  <style>
+    /* Card container */
+    .listing-card {
+      background: rgba(255, 255, 255, 0.15);
+      border: none;
+      backdrop-filter: blur(12px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .listing-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Image styling */
+    .listing-img-wrapper {
+      height: 300px;
+      overflow: hidden;
+    }
+    .listing-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .listing-card:hover .listing-img {
+      transform: scale(1.1);
+    }
+
+    /* Overlay effect */
+    .listing-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.75),
+        rgba(0, 0, 0, 0)
+      );
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      height: 100%;
+    }
+    .listing-card:hover .listing-overlay {
+      opacity: 1;
+    }
+  </style>
 </body>
