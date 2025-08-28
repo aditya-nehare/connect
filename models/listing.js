@@ -25,10 +25,15 @@ const listingSchema = Schema({
       ref: "Review",
     },
   ],
+  sowingMonths: String,
+  careCost: String,
+  fertilizer: String,
+  pesticides: String,
+  benefits: String,
 });
 
 listingSchema.post("findOneAndDelete", async (listing) => {
-  if(listing){
+  if (listing) {
     await review.deleteMany({ _id: { $in: listing.review } });
   }
 });

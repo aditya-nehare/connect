@@ -1,31 +1,57 @@
-<nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top z-3 py-3">
+<nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top py-3">
   <div class="container">
-    <ul class="navbar-nav me-auto gap-3">
-      <li class="nav-item">
-        <a
-          class="nav-link active fw-semibold text-primary border-bottom border-primary pb-1"
-          href="/listings"
-        >
-          Connect
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link fw-medium text-dark hover-underline" href="#">
-          Link
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link fw-medium text-dark hover-underline" href="#">
-          Link
-        </a>
-      </li>
-    </ul>
+    <a class="navbar-brand fw-light text-primary fs-3" href="/listings">
+      Soil to Software
+    </a>
 
-    <!-- Right Side: Add New Button -->
-    <form method="GET" action="/listings/addNew" class="d-flex">
-      <button class="btn btn-success rounded-4 shadow-sm px-4" type="submit">
-        Add New
-      </button>
-    </form>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarContent"
+      aria-controls="navbarContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto gap-3 align-items-lg-center">
+        <li class="nav-item">
+          <a
+            href="chatbot/getCrop"
+            class="btn btn-success rounded-4 shadow-sm px-4"
+          >
+            Get Crop Recommendation
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            href="/listings/addNew"
+            class="btn btn-outline-success rounded-4 shadow-sm px-4"
+          >
+            Add New
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            href="/signup"
+            class="btn btn-outline-success rounded-4 shadow-sm px-4"
+          >
+            Sign Up
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            href="/login"
+            class="btn btn-outline-success rounded-4 shadow-sm px-4"
+          >
+            Login
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>

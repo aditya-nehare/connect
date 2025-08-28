@@ -33,6 +33,11 @@ router.get("/addNew", (req, res) => {
   res.render("listings/addNew.ejs");
 });
 
+//Get Crop Recommendation
+router.get("/getCrop", (req, res) => {
+  res.render("/getCrop.ejs");
+});
+
 // Show Route
 router.get(
   "/:id",

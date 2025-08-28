@@ -1,51 +1,87 @@
 const sampleListings = [
   {
-    title: "Men's White & Black Naruto Low-Top Sneakers",
+    title: "Wheat Farmer’s Traditional Bow",
     description:
-      "Stylish low-top sneakers inspired by Naruto, featuring a white and black color block design. Perfect for casual wear with an anime flair.",
+      "A sturdy wooden bow used by Indian wheat farmers, crafted for reliability during long days in the field.",
     image:
-      "https://images.bewakoof.com/t640/men-s-white-black-naruto-color-block-low-top-sneakers-640588-1728553976-1.jpg",
-    price: 2299,
+      "https://imgs.search.brave.com/_NyZrBPi5wHOtMXrgSQ7CXnq65ScYwmiasiZk_vS6fY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9yaXBl/LXdoZWF0LWNyb3At/NjgwNjc4Mi5qcGc",
+
+    sowingMonths: "October – December",
+    careCost: "₹15,000 – ₹22,000 per hectare",
+    fertilizer: "Urea, DAP (Di-Ammonium Phosphate), Potash",
+    pesticides: "Chlorpyrifos, Imidacloprid for termite/aphid control",
+    benefits:
+      "Staple food crop; provides carbohydrates and protein; main source of income for farmers in northern India.",
   },
   {
-    title: "Men's Black & Red Akatsuki High-Top Sneakers",
+    title: "Rice Paddy Farmer’s Bamboo Bow",
     description:
-      "Bold high-top sneakers with Akatsuki-themed red and black color blocking. A must-have for any Naruto fan looking to stand out.",
+      "Lightweight bamboo bow designed for rice cultivation, offering flexibility and ease of handling in wet fields.",
     image:
-      "https://images.bewakoof.com/t640/men-s-black-red-akatsuki-color-block-high-top-sneakers-630683-1720528499-1.jpg",
-    price: 2499,
+      "https://i.pinimg.com/736x/14/40/5d/14405de2bb3a42e03da147946c70762b.jpg",
+
+    sowingMonths:
+      "June – July (Kharif season), November – December (Rabi in some areas)",
+    careCost: "₹25,000 – ₹40,000 per hectare",
+    fertilizer: "Urea, DAP, Zinc Sulphate",
+    pesticides: "Carbofuran, Buprofezin for stem borer and leafhopper control",
+    benefits:
+      "India’s main staple food; high in carbohydrates; supports food security and export markets.",
   },
   {
-    title: "Men's Red & Black Color Block High-Top Sneakers",
+    title: "Sugarcane Farmer’s Reinforced Bow",
     description:
-      "Dynamic red and black high-top sneakers with a modern color-block style. Adds edge to any streetwear outfit.",
+      "Durable bow built for sugarcane farmers, featuring reinforced joints for tough harvesting conditions.",
     image:
-      "https://images.bewakoof.com/t640/men-s-red-black-color-block-high-top-sneakers-630682-1721643544-1.jpg",
-    price: 2399,
+      "https://i.pinimg.com/736x/0d/f2/29/0df2298c15fbc2c4629621befd0215c8.jpg",
+
+    sowingMonths: "February – March and September – October",
+    careCost: "₹80,000 – ₹1,20,000 per hectare",
+    fertilizer: "Nitrogen, Phosphorus, Potassium mix; FYM (farmyard manure)",
+    pesticides: "Chlorpyrifos, Monocrotophos for stem borer and termites",
+    benefits:
+      "Main source of sugar, jaggery, and ethanol; provides employment in sugar mills; by-products used as fodder and fuel.",
   },
   {
-    title: "Men's Green & Black Kakashi High-Top Sneakers",
+    title: "Maize Farmer’s Utility Bow",
     description:
-      "High-top sneakers with a green and black color block pattern inspired by Kakashi. Ideal for fans of the Hidden Leaf's copy ninja.",
+      "A practical bow designed for maize fields, balancing comfort and durability for daily farming use.",
     image:
-      "https://images.bewakoof.com/t640/men-s-green-black-kakashi-color-block-high-top-sneakers-630679-1718781621-1.jpg",
-    price: 2499,
+      "https://i.pinimg.com/736x/fb/8b/27/fb8b2760f14f1a715099707ca63b2be3.jpg",
+
+    sowingMonths: "June – July (Kharif), October – November (Rabi)",
+    careCost: "₹12,000 – ₹20,000 per hectare",
+    fertilizer: "Urea, SSP (Single Super Phosphate), Potash",
+    pesticides: "Atrazine (herbicide), Carbaryl for stem borer control",
+    benefits:
+      "Multipurpose crop; used as food, fodder, and industrial raw material; rich in carbohydrates, vitamins, and fiber.",
   },
   {
-    title: "Men's Black & Brown Color Block Sneakers",
+    title: "Cotton Farmer’s Lightweight Bow",
     description:
-      "Sleek and versatile sneakers featuring a black and brown color block design. Great for everyday urban wear.",
+      "Portable and easy-to-carry bow, traditionally used by cotton farmers across India’s farmlands.",
     image:
-      "https://images.bewakoof.com/t640/men-s-black-brown-color-block-sneakers-642150-1717595306-1.jpg",
-    price: 2199,
+      "https://i.pinimg.com/736x/8a/03/4a/8a034a2e3ff43eac15ea879102e6ec07.jpg",
+
+    sowingMonths: "April – May (before monsoon)",
+    careCost: "₹30,000 – ₹45,000 per hectare",
+    fertilizer: "Nitrogen, Phosphorus, Potash, Zinc",
+    pesticides: "Bollworm management with Bt sprays and Imidacloprid",
+    benefits:
+      "Primary source of natural fiber for textiles; seeds used for oil extraction; vital export commodity.",
   },
   {
-    title: "Men's Black & Grey Dark Knight Reflective High-Top Sneakers",
+    title: "Millet Farmer’s Reflective Bow",
     description:
-      "High-top sneakers in black and grey with reflective details, themed after the Dark Knight. A bold choice for night and day style.",
+      "Specially designed bow with reflective finish for millet farmers, ensuring resilience from dawn to dusk.",
     image:
-      "https://images.bewakoof.com/t640/men-s-black-grey-dark-knight-reflective-color-block-high-top-sneakers-640590-1727266931-1.jpg",
-    price: 2599,
+      "https://i.pinimg.com/1200x/c3/de/7e/c3de7e3d7045b8297329b3b993fdb3a4.jpg",
+    sowingMonths: "June – July (monsoon onset)",
+    careCost: "₹8,000 – ₹15,000 per hectare",
+    fertilizer: "Urea, DAP, limited potash",
+    pesticides: "Generally pest-resistant; neem-based sprays if needed",
+    benefits:
+      "Highly nutritious; drought-resistant; supports food security in arid/semi-arid regions; gluten-free superfood.",
   },
 ];
 
